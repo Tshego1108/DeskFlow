@@ -29,6 +29,13 @@ const start = async () => {
 	app.use('/api/tickets', ticketRoutes);
 	app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+	// Root landing page
+	app.get('/', (req, res) => {
+		res.status(200).json({
+			message: 'DeskFlow backend is running. Use /api/auth, /api/tickets, /api-docs, or /health.'
+		});
+	});
+
 	// Health
 	app.get('/health', (req, res) => res.status(200).json({status: 'ok'}));
 
