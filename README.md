@@ -1,23 +1,8 @@
-# 🖥️ DeskFlow – Internal IT Service Request Portal
+# DeskFlow – Internal IT Service Request Portal
 
 DeskFlow is a full-stack Internal IT Service Request Portal that enables employees to report IT issues and allows administrators to manage and resolve service requests through a secure role-based dashboard.
 
 This project was developed as part of a Full-Stack Software Development assessment to demonstrate proficiency in building secure REST APIs, implementing authentication and authorization, integrating databases, and developing responsive React applications.
-
----
-
-## Project Preview
-
-> Add screenshots here after deployment.
-
-### Login Page
-![Login Screenshot](./screenshots/login.png)
-
-### Employee Dashboard
-![Employee Dashboard](./screenshots/employee-dashboard.png)
-
-### Admin Dashboard
-![Admin Dashboard](./screenshots/admin-dashboard.png)
 
 ---
 
@@ -73,7 +58,7 @@ Admins can update ticket status:
 
 ---
 
-# 🛠️ Tech Stack
+# Tech Stack
 
 ## Frontend
 
