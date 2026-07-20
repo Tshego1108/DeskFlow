@@ -13,6 +13,14 @@ const swaggerSpec = require('./docs/swagger');
 
 const app = express();
 
+const allowedOrigins = [
+	process.env.FRONTEND_URL,
+	process.env.CORS_ORIGIN,
+	'https://desk-flow-ommy0eywu-tshegofatsoselahle.vercel.app',
+	'http://localhost:3000',
+	'http://127.0.0.1:3000'
+].filter(Boolean);
+
 // Connect DB, then seed users, then start server
 const start = async () => {
 	await connectDB();
@@ -21,7 +29,16 @@ const start = async () => {
 	// Middleware
 	app.use(helmet());
 	app.use(express.json());
-	app.use(cors());
+	app.use(cors({
+		origin: (origin, callback) => {
+			if (!origin || allowedOrigins.includes(origin) || /^https:\/\/.*\.vercel\.app$/i.test(origin)) {
+				callback(null, true);
+			} else {
+				callback(null, false);
+			}
+		},
+		credentials: true
+	}));
 	app.use(morgan('dev'));
 
 	// Routes
